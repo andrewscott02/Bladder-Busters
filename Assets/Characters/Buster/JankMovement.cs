@@ -7,6 +7,7 @@ public class JankMovement : MonoBehaviour
     public Dictionary<KeyCode, int> inputDirections;
 
     public BusterController busterController;
+    public ControlsUI controlUI;
 
     private void Start()
     {
@@ -16,6 +17,8 @@ public class JankMovement : MonoBehaviour
         inputDirections.Add(KeyCode.A, 1);
         inputDirections.Add(KeyCode.S, 2);
         inputDirections.Add(KeyCode.D, 3);
+
+        controlUI.ConfigureControls(inputDirections);
     }
 
     // Update is called once per frame
@@ -59,12 +62,21 @@ public class JankMovement : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            newInputDirections.Add(Random.Range(0, 4));
+            int testDirection = Random.Range(0, 4);
+
+            while (newInputDirections.Contains(testDirection))
+            {
+                testDirection = Random.Range(0, 4);
+            }
+
+            newInputDirections.Add(testDirection);
         }
 
         inputDirections[KeyCode.W] = newInputDirections[0];
         inputDirections[KeyCode.A] = newInputDirections[1];
         inputDirections[KeyCode.S] = newInputDirections[2];
         inputDirections[KeyCode.D] = newInputDirections[3];
+
+        controlUI.ConfigureControls(inputDirections);
     }
 }
