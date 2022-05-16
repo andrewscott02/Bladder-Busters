@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 namespace BladderBlaster.UI
 {
@@ -19,6 +20,13 @@ namespace BladderBlaster.UI
         {
             Debug.Log("Quit called, closing game");
             Application.Quit();
+
+#if UNITY_EDITOR
+            if (EditorApplication.isPlaying)
+            {
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+#endif
         }
 
         /// <summary>
