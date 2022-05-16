@@ -10,11 +10,30 @@ public class BusterController : MonoBehaviour
     public Vector2 inputDelay;
 
     public bool canMove = true;
+    public Camera cam;
 
     public void BustAMove(int direction)
     {
         if (canMove)
             StartCoroutine(IDelayMovement(Random.Range(inputDelay.x, inputDelay.y), direction));
+    }
+
+    private void FixedUpdate()
+    {
+        if (canMove == false)
+        {
+            rb.velocity += rb.rotation * Vector3.back * 5;
+            rb.velocity += rb.rotation * Vector3.left * 4;
+            rb.velocity += Vector3.up * 1.2f;
+
+            /*
+            rb.velocity += Vector3.up * 4;
+            rb.velocity += Vector3.back * 5;
+            */
+
+            rb.freezeRotation = false;
+            cam.transform.parent = null;
+        }
     }
 
     IEnumerator IDelayMovement(float delay, int direction)
