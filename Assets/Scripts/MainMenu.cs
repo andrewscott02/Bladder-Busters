@@ -19,12 +19,19 @@ namespace BladderBlaster.UI
         }
 
         #region LEVEL FUNCTIONS
+        /// <summary>
+        /// Quits the game.
+        /// </summary>
         public void QuitGame()
         {
             Debug.Log("Quit called, closing game");
             Application.Quit();
         }
 
+        /// <summary>
+        /// Loads a level
+        /// </summary>
+        /// <param name="sceneNumber"></param>
         public void LoadLevel(int sceneNumber)
         {
             Debug.Log("Loading scene number " + sceneNumber);
@@ -33,6 +40,9 @@ namespace BladderBlaster.UI
         #endregion
 
         #region UTILS
+        /// <summary>
+        /// Gets any assignable variables
+        /// </summary>
         private void GetAssignables()
         {
 
