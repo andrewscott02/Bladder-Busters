@@ -32,7 +32,7 @@ namespace BladderBlaster.UI
         /// <summary>
         /// Loads a level
         /// </summary>
-        /// <param name="sceneNumber"></param>
+        /// <param name="sceneNumber">The build index of the level you want to load</param>
         public void LoadLevel(int sceneNumber)
         {
             Debug.Log("Loading scene number " + sceneNumber);
