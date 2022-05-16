@@ -9,9 +9,12 @@ public class BusterController : MonoBehaviour
     public int speeeeed = 1;
     public Vector2 inputDelay;
 
-    public void Movement(int direction)
+    public bool canMove = true;
+
+    public void BustAMove(int direction)
     {
-        StartCoroutine(IDelayMovement(Random.Range(inputDelay.x, inputDelay.y), direction));
+        if (canMove)
+            StartCoroutine(IDelayMovement(Random.Range(inputDelay.x, inputDelay.y), direction));
     }
 
     IEnumerator IDelayMovement(float delay, int direction)
