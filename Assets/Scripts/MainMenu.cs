@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,13 +10,8 @@ namespace BladderBlaster.UI
     /// </summary>
     public class MainMenu : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-            GetAssignables();
-        }
+        #region MENU FUNCTIONS
 
-        #region LEVEL FUNCTIONS
         /// <summary>
         /// Quits the game.
         /// </summary>
@@ -40,13 +33,6 @@ namespace BladderBlaster.UI
         #endregion
 
         #region UTILS
-        /// <summary>
-        /// Gets any assignable variables
-        /// </summary>
-        private void GetAssignables()
-        {
-
-        }
         #endregion
     }
 }
