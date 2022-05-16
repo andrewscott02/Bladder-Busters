@@ -23,8 +23,10 @@ public class BusterController : MonoBehaviour
         if (canMove == false)
         {
             rb.velocity += rb.rotation * Vector3.back * 5;
-            rb.velocity += rb.rotation * Vector3.left * 4;
-            rb.velocity += Vector3.up * 1.2f;
+            //rb.velocity += rb.rotation * Vector3.left * 4;
+            rb.velocity += rb.rotation * Vector3.up * 1.2f;
+
+            rb.angularVelocity = rb.rotation * new Vector3(0, 20, 0);
 
             /*
             rb.velocity += Vector3.up * 4;

@@ -3064,6 +3064,7 @@ MonoBehaviour:
   score: 0
   start: {fileID: 1931790037}
   scoreText: {fileID: 1963415495}
+  drunkMultiplier: 10
 --- !u!1 &1106767842
 GameObject:
   m_ObjectHideFlags: 0
