@@ -9,8 +9,12 @@ public class JankMovement : MonoBehaviour
     public BusterController busterController;
     public ControlsUI controlUI;
 
+    DrunkMeter drunkMeter;
+
     private void Start()
     {
+        drunkMeter = GetComponent<DrunkMeter>();
+
         inputDirections = new Dictionary<KeyCode, int>();
 
         inputDirections.Add(KeyCode.W, 0);
@@ -27,27 +31,27 @@ public class JankMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             //Debug.Log("W pressed: move " + DetermineDirection(KeyCode.W));
-            busterController.Movement(DetermineDirection(KeyCode.W));
+            busterController.BustAMove(DetermineDirection(KeyCode.W));
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
             //Debug.Log("A pressed: move " + DetermineDirection(KeyCode.A));
-            busterController.Movement(DetermineDirection(KeyCode.A));
+            busterController.BustAMove(DetermineDirection(KeyCode.A));
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             //Debug.Log("S pressed: move " + DetermineDirection(KeyCode.S));
-            busterController.Movement(DetermineDirection(KeyCode.S));
+            busterController.BustAMove(DetermineDirection(KeyCode.S));
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             //Debug.Log("D pressed: move " + DetermineDirection(KeyCode.D));
-            busterController.Movement(DetermineDirection(KeyCode.D));
+            busterController.BustAMove(DetermineDirection(KeyCode.D));
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("randomise");
-            RandomiseInputs();
+            drunkMeter.Drink(0.6f, 0.2f); ;
         }
     }
 
@@ -56,7 +60,7 @@ public class JankMovement : MonoBehaviour
         return inputDirections[keyCode];
     }
 
-    void RandomiseInputs()
+    public void RandomiseInputs()
     {
         List<int> newInputDirections = new List<int>();
 
