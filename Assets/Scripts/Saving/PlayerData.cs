@@ -1,28 +1,32 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
+[System.Serializable]
 public class PlayerData
 {
-    public Dictionary<string, int> scoreDictionary = new Dictionary<string, int>();
+    public Dictionary<string, int> scoreDictionaryUnsorted = new Dictionary<string, int>();
     string newPlayer;
     public PlayerData(Score score)
     {
 
         // Iterate through the scores array
-        for (int i = 0; i < scoreDictionary.Count; i++)
+        for (int i = 0; i < scoreDictionaryUnsorted.Count; i++)
         {
+            string pName = score.playerName;
+            int pScore = score.score; // player score? more like pInt, lets get shitfaced.
+
             // Sort the array before editing it
             SortScoresDictionary();
             // Make sure the current position in the array isn't populated
-            if (!scoreDictionary.ContainsKey(newPlayer))
+            if (!scoreDictionaryUnsorted.ContainsKey(pName))
             {
-                scoreDictionary.Add(newPlayer, score.score);
-                //scores[i] = score.score;
+                scoreDictionaryUnsorted.Add(pName, pScore);
             }
             // If it is, ammend the players last score
             else
             {
-                scoreDictionary[newPlayer] = score.score;
+                scoreDictionaryUnsorted[pName] = pScore;
             }
         }
     }
@@ -32,6 +36,7 @@ public class PlayerData
     /// </summary>
     public void SortScoresDictionary()
     {
-
+        // No idea if this works, pain.
+        var sortedScores = from entry in scoreDictionaryUnsorted orderby entry.Value ascending select entry;
     }
 }
