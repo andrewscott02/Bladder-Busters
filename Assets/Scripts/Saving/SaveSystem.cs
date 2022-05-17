@@ -57,4 +57,14 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void ClearData()
+    {
+        // Setup our file path, using unitys persistent data path func.
+        string path = Application.persistentDataPath + "/player.scores";
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+    }
 }
