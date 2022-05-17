@@ -11,6 +11,17 @@ namespace BladderBlaster.UI
     /// </summary>
     public class MainMenu : MonoBehaviour
     {
+        public GameObject[] panels = new GameObject[4];
+
+        private void Start()
+        {
+            //Disable all panels.
+            for (int i = 0; i < panels.Length; i++)
+            {
+                panels[i].SetActive(false);
+            }
+        }
+
         #region MENU FUNCTIONS
 
         /// <summary>
@@ -37,6 +48,12 @@ namespace BladderBlaster.UI
         {
             Debug.Log("Loading scene number " + sceneNumber);
             SceneManager.LoadScene(sceneNumber);
+        }
+
+        public void ClearData()
+        {
+            SaveSystem.ClearData();
+            Debug.LogWarning("Cleared player data");
         }
         #endregion
     }
