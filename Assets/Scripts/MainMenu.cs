@@ -39,8 +39,5 @@ namespace BladderBlaster.UI
             SceneManager.LoadScene(sceneNumber);
         }
         #endregion
-
-        #region UTILS
-        #endregion
     }
 }
