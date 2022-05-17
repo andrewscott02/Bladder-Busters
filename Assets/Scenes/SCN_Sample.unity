@@ -5641,6 +5641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f941e423ed91440afdc9d78cefd440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
   score: 0
   start: {fileID: 1931790037}
   scoreText: {fileID: 1963415495}
@@ -7161,7 +7162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362766132}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10.7, y: -0.9359262, z: 135.86}
+  m_LocalPosition: {x: 10, y: -0.9359262, z: 135.8}
   m_LocalScale: {x: 21.930775, y: 1, z: 2.5820994}
   m_Children: []
   m_Father: {fileID: 1918098855}
@@ -7200,7 +7201,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 55f5f6f3b0d199e46a07ea3991d0c122, type: 2}
+  - {fileID: 2100000, guid: b77371d7738084949965e5711f37281d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
