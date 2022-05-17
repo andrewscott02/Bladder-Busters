@@ -14,6 +14,16 @@ public class JankMovement : MonoBehaviour
 
     private void Start()
     {
+        Setup();
+    }
+
+    private void Awake()
+    {
+        Setup();
+    }
+
+    private void Setup()
+    {
         drunkMeter = GetComponent<DrunkMeter>();
         pissMeter = GetComponent<PissMeter>();
 

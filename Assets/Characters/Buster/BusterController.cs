@@ -16,7 +16,9 @@ public class BusterController : MonoBehaviour
     public void BustAMove(int direction)
     {
         if (canMove)
+        {
             StartCoroutine(IDelayMovement(Random.Range(inputDelay.x, inputDelay.y), direction));
+        }
     }
 
     private void FixedUpdate()
