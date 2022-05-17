@@ -64,7 +64,12 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/player.scores";
         if (File.Exists(path))
         {
+            Debug.Log("CLEARED PLAYER DATA");
             File.Delete(path);
+        }
+        else
+        {
+            Debug.LogWarning("SaveSystem: No data found.. Continuing");
         }
     }
 }
