@@ -19,22 +19,24 @@ public class DrunkMeter : MonoBehaviour
         pissMeter = GetComponent<PissMeter>();
     }
 
-    public void Drink(float drinkIncrease, float pissIncrease)
+    public void Drink(float drinkIncrease)
     {
-        drunkScale += drinkIncrease;
+        drunkScale = Mathf.Clamp(drunkScale + drinkIncrease, 0, 1);
 
-        pissMeter.IncreasePiss(pissIncrease);
         jankController.RandomiseInputs();
     }
 
-    public void SoberUp(float drinkDecrease)
+    public void SoberUp(float drinkDecrease, bool resetControls)
     {
         drunkScale = Mathf.Clamp(drunkScale - drinkDecrease, 0, 1);
+
+        if (resetControls)
+            jankController.StandardControls();
     }
 
     private void FixedUpdate()
     {
-        SoberUp(drunkLossPerUpdate);
+        SoberUp(drunkLossPerUpdate, false);
         drunkSlider.value = drunkScale;
 
         if (drunkScale >= 0.4)

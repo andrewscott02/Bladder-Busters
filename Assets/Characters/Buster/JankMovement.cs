@@ -15,14 +15,7 @@ public class JankMovement : MonoBehaviour
     {
         drunkMeter = GetComponent<DrunkMeter>();
 
-        inputDirections = new Dictionary<KeyCode, int>();
-
-        inputDirections.Add(KeyCode.W, 0);
-        inputDirections.Add(KeyCode.A, 1);
-        inputDirections.Add(KeyCode.S, 2);
-        inputDirections.Add(KeyCode.D, 3);
-
-        controlUI.ConfigureControls(inputDirections);
+        StandardControls();
     }
 
     // Update is called once per frame
@@ -51,13 +44,25 @@ public class JankMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("randomise");
-            drunkMeter.Drink(0.6f, 0.2f); ;
+            drunkMeter.Drink(0.3f); ;
         }
     }
 
     int DetermineDirection(KeyCode keyCode)
     {
         return inputDirections[keyCode];
+    }
+
+    public void StandardControls()
+    {
+        inputDirections = new Dictionary<KeyCode, int>();
+
+        inputDirections.Add(KeyCode.W, 0);
+        inputDirections.Add(KeyCode.A, 1);
+        inputDirections.Add(KeyCode.S, 2);
+        inputDirections.Add(KeyCode.D, 3);
+
+        controlUI.ConfigureControls(inputDirections);
     }
 
     public void RandomiseInputs()
