@@ -1,20 +1,37 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class PlayerData
 {
-    public int[] scores = new int[10];
-    public string[] names = new string[10];
-
+    public Dictionary<string, int> scoreDictionary = new Dictionary<string, int>();
+    string newPlayer;
     public PlayerData(Score score)
     {
-        for (int i = 0; i < scores.Length; i++)
+
+        // Iterate through the scores array
+        for (int i = 0; i < scoreDictionary.Count; i++)
         {
-            if (scores[i] != 0)
+            // Sort the array before editing it
+            SortScoresDictionary();
+            // Make sure the current position in the array isn't populated
+            if (!scoreDictionary.ContainsKey(newPlayer))
             {
-                scores[i] = score.score;
+                scoreDictionary.Add(newPlayer, score.score);
+                //scores[i] = score.score;
+            }
+            // If it is, ammend the players last score
+            else
+            {
+                scoreDictionary[newPlayer] = score.score;
             }
         }
+    }
+
+    /// <summary>
+    /// Sorts the score dictionary
+    /// </summary>
+    public void SortScoresDictionary()
+    {
+
     }
 }
