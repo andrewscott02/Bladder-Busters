@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    bool playing = true;
     public int score;
 
     public GameObject start;
@@ -22,7 +23,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (drunkMeter.GetJankMovement().busterController.canMove)
+        if (playing)
         {
             float drunkScale = drunkMeter.drunkScale * drunkMultiplier;
             score = (int)(Vector3.Distance(transform.position, start.transform.position) * (drunkScale > 1 ? drunkScale : 1));
@@ -33,7 +34,8 @@ public class Score : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("My Score is " + score);
-
+        scoreText.text = score.ToString();
+        playing = false;
         //Save Player Score Here
     }
 }

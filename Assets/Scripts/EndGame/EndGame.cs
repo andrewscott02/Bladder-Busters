@@ -13,25 +13,23 @@ public class EndGame : MonoBehaviour
             Score score = other.GetComponent<Score>();
             BusterController controller = other.GetComponent<BusterController>();
 
-            if (score != null)
+            if (controller.canMove)
             {
-                //Adjust Player Stats
-                score.score += scoreBonus;
-            }
+                if (controller != null)
+                {
+                    controller.canMove = false;
+                }
 
-            if (controller != null)
-            {
-                controller.canMove = false;
-            }
+                if (score != null)
+                {
+                    //Adjust Player Stats
+                    score.score += scoreBonus;
+                    score.EndGame();
+                }
 
-            if (score != null)
-            {
-                //Adjust Player Stats
-                score.EndGame();
+                //Destroy this collectible
+                Destroy(this.gameObject);
             }
-
-            //Destroy this collectible
-            Destroy(this.gameObject);
         }
     }
 }

@@ -48,6 +48,7 @@ public class PissMeter : MonoBehaviour
         {
             alreadyLost = true;
             busterController.canMove = false;
+            busterController.pissedYourself = true;
 
             if (pissFXGameOver != null)
             {
@@ -73,7 +74,8 @@ public class PissMeter : MonoBehaviour
         if (busterController.canMove)
         {
             IncreasePiss(pissIncreasePerUpdate);
-            pissSlider.value = pissScale;
         }
+
+        pissSlider.value = pissScale;
     }
 }

@@ -10,6 +10,7 @@ public class BusterController : MonoBehaviour
     public Vector2 inputDelay;
 
     public bool canMove = true;
+    public bool pissedYourself = false;
     public Camera cam;
 
     public void BustAMove(int direction)
@@ -20,7 +21,7 @@ public class BusterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove == false)
+        if (pissedYourself == true)
         {
             rb.velocity += rb.rotation * Vector3.back * 5;
             //rb.velocity += rb.rotation * Vector3.left * 4;
