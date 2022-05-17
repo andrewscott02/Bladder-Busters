@@ -10,10 +10,12 @@ public class JankMovement : MonoBehaviour
     public ControlsUI controlUI;
 
     DrunkMeter drunkMeter;
+    PissMeter pissMeter;
 
     private void Start()
     {
         drunkMeter = GetComponent<DrunkMeter>();
+        pissMeter = GetComponent<PissMeter>();
 
         StandardControls();
     }
@@ -44,7 +46,8 @@ public class JankMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("randomise");
-            drunkMeter.Drink(0.3f); ;
+            drunkMeter.Drink(0.3f);
+            pissMeter.IncreasePiss(0.2f);
         }
     }
 

@@ -48,4 +48,9 @@ public class DrunkMeter : MonoBehaviour
             drunkFX.SetActive(false);
         }
     }
+
+    public JankMovement GetJankMovement()
+    {
+        return jankController;
+    }
 }

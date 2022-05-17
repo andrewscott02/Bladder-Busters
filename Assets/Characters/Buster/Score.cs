@@ -22,8 +22,11 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float drunkScale = drunkMeter.drunkScale * drunkMultiplier;
-        score = (int)(Vector3.Distance(transform.position, start.transform.position) * (drunkScale > 1 ? drunkScale : 1));
-        scoreText.text = score.ToString();
+        if (drunkMeter.GetJankMovement().busterController.canMove)
+        {
+            float drunkScale = drunkMeter.drunkScale * drunkMultiplier;
+            score = (int)(Vector3.Distance(transform.position, start.transform.position) * (drunkScale > 1 ? drunkScale : 1));
+            scoreText.text = score.ToString();
+        }
     }
 }
