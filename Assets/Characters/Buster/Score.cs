@@ -29,4 +29,11 @@ public class Score : MonoBehaviour
             scoreText.text = score.ToString();
         }
     }
+
+    public void EndGame()
+    {
+        Debug.Log("My Score is " + score);
+
+        //Save Player Score Here
+    }
 }

@@ -53,6 +53,13 @@ public class PissMeter : MonoBehaviour
             {
                 Instantiate(pissFXGameOver, penisTransform);
             }
+
+            Score score = busterController.GetComponent<Score>();
+
+            if (score != null)
+            {
+                score.EndGame();
+            }
         }
     }
 
@@ -63,7 +70,10 @@ public class PissMeter : MonoBehaviour
 
     private void FixedUpdate()
     {
-        IncreasePiss(pissIncreasePerUpdate);
-        pissSlider.value = pissScale;
+        if (busterController.canMove)
+        {
+            IncreasePiss(pissIncreasePerUpdate);
+            pissSlider.value = pissScale;
+        }
     }
 }

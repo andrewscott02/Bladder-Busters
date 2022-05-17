@@ -36,16 +36,19 @@ public class DrunkMeter : MonoBehaviour
 
     private void FixedUpdate()
     {
-        SoberUp(drunkLossPerUpdate, false);
-        drunkSlider.value = drunkScale;
+        if (jankController.busterController.canMove)
+        {
+            SoberUp(drunkLossPerUpdate, false);
+            drunkSlider.value = drunkScale;
 
-        if (drunkScale >= 0.4)
-        {
-            drunkFX.SetActive(true);
-        }
-        else
-        {
-            drunkFX.SetActive(false);
+            if (drunkScale >= 0.4)
+            {
+                drunkFX.SetActive(true);
+            }
+            else
+            {
+                drunkFX.SetActive(false);
+            }
         }
     }
 
