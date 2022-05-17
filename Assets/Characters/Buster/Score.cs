@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     bool playing = true;
+    public string playerName;
     public int score;
 
     public GameObject start;
@@ -36,6 +37,7 @@ public class Score : MonoBehaviour
         Debug.Log("My Score is " + score);
         scoreText.text = score.ToString();
         playing = false;
+
         //Save Player Score Here
     }
 }
