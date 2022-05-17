@@ -55,6 +55,11 @@ namespace BladderBlaster.UI
             SaveSystem.ClearData();
             Debug.LogWarning("Cleared player data");
         }
+
+        public void OpenURL(string url)
+        {
+            Application.OpenURL(url);
+        }
         #endregion
     }
 }
