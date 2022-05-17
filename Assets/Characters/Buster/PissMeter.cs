@@ -22,7 +22,7 @@ public class PissMeter : MonoBehaviour
 
     public void IncreasePiss(float pissIncrease)
     {
-        pissScale += pissIncrease;
+        pissScale = Mathf.Clamp(pissScale + pissIncrease, 0, 1);
 
         if (pissScale >= 1)
         {
@@ -58,7 +58,7 @@ public class PissMeter : MonoBehaviour
 
     public void TakeThePiss(float pissDecrease)
     {
-        pissScale -= pissDecrease;
+        pissScale = Mathf.Clamp(pissScale - pissDecrease, 0, 1);
     }
 
     private void FixedUpdate()

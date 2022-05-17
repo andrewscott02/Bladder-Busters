@@ -6,7 +6,7 @@ public class BusterController : MonoBehaviour
 {
     public Rigidbody rb;
 
-    public int speeeeed = 1;
+    public float speeeeed = 1;
     public Vector2 inputDelay;
 
     public bool canMove = true;

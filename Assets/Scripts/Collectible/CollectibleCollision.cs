@@ -24,9 +24,9 @@ public class CollectibleCollision : MonoBehaviour
                 //Adjust Player Stats
                 collectible.AdjustPlayerStats(drunkMeter, pissMeter);
             }
-        }
 
-        //Destroy this collectible
-        Destroy(this.gameObject);
+            //Destroy this collectible
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 9160341166900313498}
   m_Layer: 0
   m_Name: Buster
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1009,6 +1009,7 @@ MonoBehaviour:
   speeeeed: 20
   inputDelay: {x: 0.1, y: 0.4}
   canMove: 1
+  cam: {fileID: 0}
 --- !u!114 &965686937868964488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1055,7 @@ MonoBehaviour:
   drunkScale: 0
   drunkLossPerUpdate: 0.0002
   drunkFX: {fileID: 3120927960058411432}
+  drunkSlider: {fileID: 0}
 --- !u!114 &9160341166900313498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,6 +1074,7 @@ MonoBehaviour:
   pissFXGameOver: {fileID: 41156873341429929, guid: e1061e8c09322574da778473c3a4cb70,
     type: 3}
   penisTransform: {fileID: 4035422342818011750}
+  pissSlider: {fileID: 0}
 --- !u!1 &965686938429062732
 GameObject:
   m_ObjectHideFlags: 0

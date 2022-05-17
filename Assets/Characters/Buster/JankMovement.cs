@@ -23,22 +23,22 @@ public class JankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             //Debug.Log("W pressed: move " + DetermineDirection(KeyCode.W));
             busterController.BustAMove(DetermineDirection(KeyCode.W));
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             //Debug.Log("A pressed: move " + DetermineDirection(KeyCode.A));
             busterController.BustAMove(DetermineDirection(KeyCode.A));
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             //Debug.Log("S pressed: move " + DetermineDirection(KeyCode.S));
             busterController.BustAMove(DetermineDirection(KeyCode.S));
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             //Debug.Log("D pressed: move " + DetermineDirection(KeyCode.D));
             busterController.BustAMove(DetermineDirection(KeyCode.D));
