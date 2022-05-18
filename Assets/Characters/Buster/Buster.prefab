@@ -140,7 +140,7 @@ CharacterJoint:
   m_EnableProjection: 0
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_BreakForce: 45000
+  m_BreakForce: 20000
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
@@ -1006,9 +1006,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 965686937868964489}
-  speeeeed: 20
+  baseSpeed: 2
+  editorSpeedMultiplier: 0.1
   inputDelay: {x: 0.1, y: 0.4}
   canMove: 1
+  pissedYourself: 0
   cam: {fileID: 0}
 --- !u!114 &965686937868964488
 MonoBehaviour:
