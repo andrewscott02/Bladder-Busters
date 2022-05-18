@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,13 +36,27 @@ public class Score : MonoBehaviour
 
     public void EndGame(string message)
     {
-        Debug.Log("My Score is " + score);
-        Debug.Log("Message is " + message);
+        
         scoreText.text = score.ToString();
         playing = false;
 
         //Save Player Score Here
         SaveSystem.SaveScore(this);
         endGameMessage.ShowMessageDelay(message, 2f);
+
+        // Debugs
+        Debug.Log("My Score is " + score);
+        Debug.Log("Player name is " + playerName);
+        Debug.Log("Message is " + message);
+    }
+
+    /// <summary>
+    /// Gets called by the input field after text entry.
+    /// </summary>
+    public void GetPlayerName()
+    {
+        GetName getPlayerName = GameObject.Find("EndGame").GetComponent<GetName>();
+
+        playerName = getPlayerName.SendNameForScore();
     }
 }

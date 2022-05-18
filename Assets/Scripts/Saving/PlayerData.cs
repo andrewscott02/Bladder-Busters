@@ -14,8 +14,7 @@ public class PlayerData
             string pName = score.playerName;
             int pScore = score.score; // player score? more like pInt, lets get shitfaced.
 
-            // Sort the array before editing it
-            SortScoresDictionary();
+            
             // Make sure the current position in the array isn't populated
             if (!scoreDictionaryUnsorted.ContainsKey(pName))
             {

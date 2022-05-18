@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 /// <summary>
 /// Simple script that can go on any gameobject to call a load of the save data
@@ -12,6 +13,8 @@ public class HighscoreLoader : MonoBehaviour
 {
     public List<TMP_Text> names = new List<TMP_Text>();
     public List<TMP_Text> scores = new List<TMP_Text>();
+
+    public Dictionary<string, int> localDict = new Dictionary<string, int>();
 
     private void Start()
     {
@@ -33,11 +36,22 @@ public class HighscoreLoader : MonoBehaviour
                 scores[i].text = null;
             }
 
-            // load names
+            localDict = new Dictionary<string, int>(data.SortScoresDictionary());
+            Debug.Log(localDict);
 
+            // load names
+            for (int i = 0; i < names.Count; i++)
+            {
+                names[i].text = localDict.Keys.First<string>();
+            }
 
             // Load scores
-        }else
+            for (int i = 0; i < scores.Count; i++)
+            {
+                scores[i].text = localDict.Values.First<int>().ToString();
+            }
+        }
+        else
         {
             names[0].text = "NO";
             scores[0].text = "SCORES";

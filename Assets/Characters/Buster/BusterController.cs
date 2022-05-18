@@ -61,7 +61,7 @@ public class BusterController : MonoBehaviour
 
     IEnumerator IDelayMovement(float delay, int direction)
     {
-        Debug.Log("Move in " + direction + " direction");
+        //Debug.Log("Move in " + direction + " direction");
 
         yield return new WaitForSeconds(delay);
 

@@ -27,6 +27,7 @@ public static class SaveSystem
 
         // Save the data by serializing it.
         formatter.Serialize(stream, data);
+
         // Close filestream when done.
         stream.Close();
     }
