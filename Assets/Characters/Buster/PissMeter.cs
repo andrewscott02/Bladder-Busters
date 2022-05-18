@@ -38,6 +38,8 @@ public class PissMeter : MonoBehaviour
         {
             pissFX.SetActive(false);
         }
+
+        busterController.RecalculateSpeed(pissScale + 1);
     }
 
     bool alreadyLost = false;
@@ -59,7 +61,7 @@ public class PissMeter : MonoBehaviour
 
             if (score != null)
             {
-                score.EndGame();
+                score.EndGame("You pissed yourself");
             }
         }
     }
@@ -67,6 +69,8 @@ public class PissMeter : MonoBehaviour
     public void TakeThePiss(float pissDecrease)
     {
         pissScale = Mathf.Clamp(pissScale - pissDecrease, 0, 1);
+
+        busterController.RecalculateSpeed(pissScale + 1);
     }
 
     private void FixedUpdate()

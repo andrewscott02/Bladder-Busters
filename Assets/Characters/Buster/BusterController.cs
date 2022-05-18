@@ -6,12 +6,30 @@ public class BusterController : MonoBehaviour
 {
     public Rigidbody rb;
 
-    public float speeeeed = 1;
+    float speeeeed = 1;
+    public float baseSpeed = 2;
+    public float editorSpeedMultiplier = 0.1f;
     public Vector2 inputDelay;
 
     public bool canMove = true;
     public bool pissedYourself = false;
     public Camera cam;
+
+    private void Start()
+    {
+        RecalculateSpeed(1);
+    }
+
+    public void RecalculateSpeed(float speedMultiplier)
+    {
+        speeeeed = baseSpeed;
+
+        speeeeed *= speedMultiplier;
+
+#if UNITY_EDITOR
+        speeeeed *= editorSpeedMultiplier;
+#endif
+    }
 
     public void BustAMove(int direction)
     {

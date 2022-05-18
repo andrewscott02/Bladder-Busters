@@ -24,7 +24,7 @@ public class EndGame : MonoBehaviour
                 {
                     //Adjust Player Stats
                     score.score += scoreBonus;
-                    score.EndGame();
+                    score.EndGame("You arrived home");
                 }
 
                 //Destroy this collectible

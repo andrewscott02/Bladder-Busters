@@ -11,6 +11,7 @@ public class Score : MonoBehaviour
 
     public GameObject start;
 
+    public EndGameMessage endGameMessage;
     public Text scoreText;
 
     DrunkMeter drunkMeter;
@@ -32,12 +33,15 @@ public class Score : MonoBehaviour
         }
     }
 
-    public void EndGame()
+    public void EndGame(string message)
     {
         Debug.Log("My Score is " + score);
+        Debug.Log("Message is " + message);
         scoreText.text = score.ToString();
         playing = false;
 
         //Save Player Score Here
+        SaveSystem.SaveScore(this);
+        endGameMessage.ShowMessageDelay(message, 2f);
     }
 }
