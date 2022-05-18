@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69d186927e39ff48b80d2f2be59a8a9, type: 3}
   m_Name: Beer
   m_EditorClassIdentifier: 
-  collectibleName: Beer
-  model: {fileID: 919132149155446097, guid: 58d7a52b128cd6045af770bfdf104fb5, type: 3}
-  collectFX: {fileID: 0}
+  collectFX: {fileID: 4240470174465819528, guid: e6a37cec30fb7bd4e97fbe893d5efc09,
+    type: 3}
   drunkValue: 0.4
   pissValue: 0.2

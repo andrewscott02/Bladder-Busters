@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69d186927e39ff48b80d2f2be59a8a9, type: 3}
   m_Name: Lampost
   m_EditorClassIdentifier: 
-  collectFX: {fileID: 0}
+  collectFX: {fileID: 4240470174465819528, guid: 7210a50d2644f3041a7a652cb3775ac1,
+    type: 3}
   drunkValue: 0
   pissValue: -0.3

@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9458cc891877f794cb4c5074276eba24,
         type: 2}
+    - target: {fileID: 16670231875152553, guid: 4a260c2b9b5b18f4f9b42e3ba03d354b,
+        type: 3}
+      propertyPath: destroyObject
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4628757621680014842, guid: 4a260c2b9b5b18f4f9b42e3ba03d354b,
         type: 3}
       propertyPath: m_RootOrder

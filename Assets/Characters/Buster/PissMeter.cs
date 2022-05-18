@@ -61,7 +61,7 @@ public class PissMeter : MonoBehaviour
 
             if (score != null)
             {
-                score.EndGame("You pissed yourself");
+                score.EndGame("Bladder Busted!");
             }
         }
     }
