@@ -6,10 +6,8 @@ using System.Linq;
 public class PlayerData
 {
     public Dictionary<string, int> scoreDictionaryUnsorted = new Dictionary<string, int>();
-    string newPlayer;
     public PlayerData(Score score)
     {
-
         // Iterate through the scores array
         for (int i = 0; i < scoreDictionaryUnsorted.Count; i++)
         {
@@ -34,9 +32,12 @@ public class PlayerData
     /// <summary>
     /// Sorts the score dictionary
     /// </summary>
-    public void SortScoresDictionary()
+    public Dictionary<string, int> SortScoresDictionary()
     {
         // No idea if this works, pain.
         var sortedScores = from entry in scoreDictionaryUnsorted orderby entry.Value ascending select entry;
+        Dictionary<string, int> sortedScoresDict = new Dictionary<string, int>();
+        sortedScoresDict = sortedScores as Dictionary<string, int>;
+        return sortedScoresDict;
     }
 }

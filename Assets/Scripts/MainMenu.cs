@@ -18,6 +18,9 @@ namespace BladderBlaster.UI
             //Disable all panels.
             for (int i = 0; i < panels.Length; i++)
             {
+                if (panels[i] == null)
+                    return;
+                
                 panels[i].SetActive(false);
             }
         }

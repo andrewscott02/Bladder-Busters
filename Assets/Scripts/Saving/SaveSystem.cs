@@ -2,6 +2,11 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+/// <summary>
+/// Class that handles the saving and loading of data using system IO and a binary formatter.
+/// 
+/// written by @MattRobertsCGD
+/// </summary>
 public static class SaveSystem
 {
     /// <summary>
@@ -31,7 +36,7 @@ public static class SaveSystem
     /// Loads player data from binary and converts it back to a useable format.
     /// </summary>
     /// <returns></returns>
-    public static PlayerData LoadPlayer()
+    public static PlayerData LoadScores()
     {
         // Setup our file path, using unitys persistent data path func.
         string path = Application.persistentDataPath + "/player.scores";
@@ -58,6 +63,9 @@ public static class SaveSystem
         }
     }
 
+    /// <summary>
+    /// Clears data if the file exists and logs it to the console.
+    /// </summary>
     public static void ClearData()
     {
         // Setup our file path, using unitys persistent data path func.
