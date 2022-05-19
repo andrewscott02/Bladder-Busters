@@ -24,7 +24,7 @@ public class HighscoreLoader : MonoBehaviour
     public void PopulateNamesAndScores(PlayerData data)
     {
         // Guard clause to catch missing data error
-        if (data != null)
+        if (data != null && data.scoreDictionaryUnsorted.Count > 0)
         {
             // Clear any text from names and scores
             for (int i = 0; i < names.Count; i++)
