@@ -44,7 +44,7 @@ public static class SaveInSession
                 }
             }
 
-            playerScoresSorted.Add(bestPlayer, bestScore);
+            playerScoresSorted.Add(bestSavedScore);
             count++;
         }
     }
