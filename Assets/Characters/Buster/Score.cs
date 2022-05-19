@@ -42,11 +42,6 @@ public class Score : MonoBehaviour
 
         //Save Player Score Here
         endGameMessage.ShowMessageDelay(message, 2f);
-
-        // Debugs
-        Debug.Log("My Score is " + score);
-        Debug.Log("Player name is " + playerName);
-        Debug.Log("Message is " + message);
     }
 
     /// <summary>
@@ -59,5 +54,6 @@ public class Score : MonoBehaviour
         playerName = getPlayerName.SendNameForScore();
 
         SaveSystem.SaveScore(this);
+        SaveInSession.SaveScore(this);
     }
 }

@@ -21,10 +21,10 @@ public class HighscoreLoader : MonoBehaviour
         Initialize();
     }
 
-    public void PopulateNamesAndScores(PlayerData data)
+    public void PopulateNamesAndScores()
     {
         // Guard clause to catch missing data error
-        if (data != null)
+        if (SaveInSession.playerScoresUnsorted.Count > 0)
         {
             // Clear any text from names and scores
             for (int i = 0; i < names.Count; i++)
@@ -36,7 +36,8 @@ public class HighscoreLoader : MonoBehaviour
                 scores[i].text = null;
             }
 
-            localDict = new Dictionary<string, int>(data.scoreDictionaryUnsorted);
+            localDict = new Dictionary<string, int>(SaveInSession.playerScoresUnsorted);
+
             foreach(var item in localDict)
             {
                 Debug.Log(item.Key);
@@ -44,15 +45,15 @@ public class HighscoreLoader : MonoBehaviour
             }
 
             // load names
-            for (int i = 0; i < names.Count; i++)
+            for (int i = 0; i < SaveInSession.playerScoresUnsorted.Count; i++)
             {
-                names[i].text = localDict.ElementAt(0).Key;
+                names[i].text = SaveInSession.playerScoresUnsorted.ElementAt(i).Key;
             }
 
             // Load scores
-            for (int i = 0; i < scores.Count; i++)
+            for (int i = 0; i < SaveInSession.playerScoresUnsorted.Count; i++)
             {
-                scores[i].text = localDict.ElementAt(0).Value.ToString();
+                scores[i].text = SaveInSession.playerScoresUnsorted.ElementAt(i).Value.ToString();
             }
         }
         else
@@ -73,6 +74,6 @@ public class HighscoreLoader : MonoBehaviour
 
     public void Initialize()
     {
-        PopulateNamesAndScores(SaveSystem.LoadScores());
+        PopulateNamesAndScores();
     }
 }
