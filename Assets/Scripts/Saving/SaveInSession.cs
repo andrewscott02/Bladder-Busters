@@ -22,6 +22,7 @@ public static class SaveInSession
         }
 
         SortData();
+        SaveSystem.SaveScore();
     }
 
     public static List<SaveData> playerScoresSorted = new List<SaveData>();

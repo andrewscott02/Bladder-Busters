@@ -56,6 +56,7 @@ namespace BladderBlaster.UI
         public void ClearData()
         {
             Debug.LogWarning("Cleared player data");
+            SaveSystem.ClearData();
         }
 
         public void OpenURL(string url)
