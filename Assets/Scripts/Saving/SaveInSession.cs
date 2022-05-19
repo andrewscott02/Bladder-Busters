@@ -3,24 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[System.Serializable]
-public class SaveInSession : MonoBehaviour
+public static class SaveInSession
 {
-    public static SaveInSession instance;
-
-    private void Start()
-    {
-        if (instance = null)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            SaveInSession.instance = this;
-            DontDestroyOnLoad(this);
-        }
-    }
-
     public static List<SaveData> playerScoresUnsorted = new List<SaveData>();
 
     public static void SaveScore(Score score)
@@ -64,10 +48,4 @@ public class SaveInSession : MonoBehaviour
             count++;
         }
     }
-}
-
-public class SaveData
-{
-    public string player = " ";
-    public int score = 0;
 }
