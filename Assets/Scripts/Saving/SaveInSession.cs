@@ -18,7 +18,7 @@ public static class SaveInSession
 
         foreach (var item in playerScoresUnsorted)
         {
-            Debug.Log(item.player + ": " + item.score);
+            Debug.Log("Unsorted list = " + item.player + ": " + item.score);
         }
 
         SortData();
@@ -32,18 +32,25 @@ public static class SaveInSession
 
         int count = 0;
 
+        List<SaveData> playerScoresUnsortedCopy = new List<SaveData>();
+
+        foreach(var item in playerScoresUnsorted)
+        {
+            playerScoresUnsortedCopy.Add(item);
+        }
+
         while (playerScoresUnsorted.Count != count)
         {
             SaveData bestSavedScore = new SaveData();
-            foreach (var item in playerScoresUnsorted)
+            foreach (var item in playerScoresUnsortedCopy)
             {
-                if (bestSavedScore.score < item.score)
+                if (bestSavedScore.score < item.score && playerScoresSorted.Contains(item) == false)
                 {
-                    bestSavedScore.player = item.player;
-                    bestSavedScore.score = item.score;
+                    bestSavedScore = item;
                 }
             }
 
+            playerScoresUnsortedCopy.Remove(bestSavedScore);
             playerScoresSorted.Add(bestSavedScore);
             count++;
         }
