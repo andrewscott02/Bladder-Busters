@@ -1,18 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public static class SaveInSession
 {
-    public static Dictionary<string, int> playerScoresUnsorted = new Dictionary<string, int>();
+    public static List<SaveData> playerScoresUnsorted = new List<SaveData>();
 
     public static void SaveScore(Score score)
     {
-        playerScoresUnsorted.Add(score.playerName, score.score);
+        SaveData currentSavedData = new SaveData();
+
+        currentSavedData.player = score.playerName;
+        currentSavedData.score = score.score;
+
+        playerScoresUnsorted.Add(currentSavedData);
 
         foreach (var item in playerScoresUnsorted)
         {
-            Debug.Log(item.Key + ": " + item.Value);
+            Debug.Log(item.player + ": " + item.score);
+        }
+
+        SortData();
+    }
+
+    public static List<SaveData> playerScoresSorted = new List<SaveData>();
+
+    public static void SortData()
+    {
+        playerScoresSorted = new List<SaveData>();
+
+        int count = 0;
+
+        while (playerScoresUnsorted.Count != count)
+        {
+            SaveData bestSavedScore = new SaveData();
+            foreach (var item in playerScoresUnsorted)
+            {
+                if (bestSavedScore.score < item.score)
+                {
+                    bestSavedScore.player = item.player;
+                    bestSavedScore.score = item.score;
+                }
+            }
+
+            playerScoresSorted.Add(bestPlayer, bestScore);
+            count++;
         }
     }
+}
+
+public class SaveData
+{
+    public string player = " ";
+    public int score = 0;
 }
