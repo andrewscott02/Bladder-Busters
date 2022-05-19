@@ -13,7 +13,8 @@ public class PlayerData
         {
             string pName = score.playerName;
             int pScore = score.score; // player score? more like pInt, lets get shitfaced.
-
+            
+            scoreDictionaryUnsorted.Add(pName, pScore);
             
             // Make sure the current position in the array isn't populated
             if (!scoreDictionaryUnsorted.ContainsKey(pName))
