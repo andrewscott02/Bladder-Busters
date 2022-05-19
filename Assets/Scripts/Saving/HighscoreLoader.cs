@@ -36,19 +36,23 @@ public class HighscoreLoader : MonoBehaviour
                 scores[i].text = null;
             }
 
-            localDict = new Dictionary<string, int>(data.SortScoresDictionary());
-            Debug.Log(localDict);
+            localDict = new Dictionary<string, int>(data.scoreDictionaryUnsorted);
+            foreach(var item in localDict)
+            {
+                Debug.Log(item.Key);
+                Debug.Log(item.Value);
+            }
 
             // load names
             for (int i = 0; i < names.Count; i++)
             {
-                names[i].text = localDict.Keys.First<string>();
+                names[i].text = localDict.ElementAt(0).Key;
             }
 
             // Load scores
             for (int i = 0; i < scores.Count; i++)
             {
-                scores[i].text = localDict.Values.First<int>().ToString();
+                scores[i].text = localDict.ElementAt(0).Value.ToString();
             }
         }
         else
@@ -65,8 +69,6 @@ public class HighscoreLoader : MonoBehaviour
                 scores[i].text = null;
             }
         }
-
-
     }
 
     public void Initialize()
