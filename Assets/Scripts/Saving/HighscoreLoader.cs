@@ -14,7 +14,7 @@ public class HighscoreLoader : MonoBehaviour
     public List<TMP_Text> names = new List<TMP_Text>();
     public List<TMP_Text> scores = new List<TMP_Text>();
 
-    public Dictionary<string, int> localDict = new Dictionary<string, int>();
+    public List<SaveData> localDict = new List<SaveData>();
 
     private void Start()
     {
@@ -36,24 +36,24 @@ public class HighscoreLoader : MonoBehaviour
                 scores[i].text = null;
             }
 
-            localDict = new Dictionary<string, int>(SaveInSession.playerScoresSorted);
+            localDict = new List<SaveData>(SaveInSession.playerScoresSorted);
 
             foreach(var item in localDict)
             {
-                Debug.Log(item.Key);
-                Debug.Log(item.Value);
+                Debug.Log(item.player);
+                Debug.Log(item.score);
             }
 
             // load names
             for (int i = 0; i < SaveInSession.playerScoresSorted.Count; i++)
             {
-                names[i].text = SaveInSession.playerScoresSorted.ElementAt(i).Key;
+                names[i].text = SaveInSession.playerScoresSorted[i].player;
             }
 
             // Load scores
             for (int i = 0; i < SaveInSession.playerScoresSorted.Count; i++)
             {
-                scores[i].text = SaveInSession.playerScoresSorted.ElementAt(i).Value.ToString();
+                scores[i].text = SaveInSession.playerScoresSorted[i].score.ToString();
             }
         }
         else
