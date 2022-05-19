@@ -6,6 +6,11 @@ using System.Linq;
 [System.Serializable]
 public class SaveInSession : MonoBehaviour
 {
+    public SaveInSession()
+    {
+
+    }
+
     public static SaveInSession instance;
 
     private void Start()

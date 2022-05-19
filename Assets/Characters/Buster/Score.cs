@@ -52,8 +52,6 @@ public class Score : MonoBehaviour
         GetName getPlayerName = GameObject.Find("EndGame").GetComponent<GetName>();
 
         playerName = getPlayerName.SendNameForScore();
-
-        SaveSystem.SaveScore(this);
         SaveInSession.SaveScore(this);
     }
 }
