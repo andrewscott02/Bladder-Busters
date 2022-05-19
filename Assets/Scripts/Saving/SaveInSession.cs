@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public static class SaveInSession
+public class SaveInSession
 {
     public static List<SaveData> playerScoresUnsorted = new List<SaveData>();
 

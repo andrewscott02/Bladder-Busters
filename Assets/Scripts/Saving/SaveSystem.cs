@@ -13,7 +13,7 @@ public static class SaveSystem
     /// Converts the scores to binary and then saves them. Uses the playerData contructor setup in PlayerData.cs
     /// </summary>
     /// <param name="score"></param>
-    public static void SaveScore(Score score)
+    public static void SaveScore(SaveInSession saveInSession)
     {
         // Create new formatter.
         BinaryFormatter formatter = new BinaryFormatter();
@@ -23,7 +23,7 @@ public static class SaveSystem
         FileStream stream = new FileStream(path, FileMode.Create);
 
         // Pass in the the data that we need to save.
-        PlayerData data = new PlayerData(score);
+        SaveInSession data = new SaveInSession(saveInSession);
 
         // Save the data by serializing it.
         formatter.Serialize(stream, data);
@@ -37,7 +37,7 @@ public static class SaveSystem
     /// Loads player data from binary and converts it back to a useable format.
     /// </summary>
     /// <returns></returns>
-    public static PlayerData LoadScores()
+    public static SaveInSession LoadScores()
     {
         // Setup our file path, using unitys persistent data path func.
         string path = Application.persistentDataPath + "/player.scores";
@@ -50,7 +50,7 @@ public static class SaveSystem
             // Create a new filestream to make our file.
             FileStream stream = new FileStream(path, FileMode.Open);
             // Deserialize the data, meaning it's in a useable format. Cast it to PlayerData that we can use
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
+            SaveInSession data = formatter.Deserialize(stream) as SaveInSession;
             // Close the filestream when done.
             stream.Close();
 
