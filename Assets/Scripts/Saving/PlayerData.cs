@@ -5,14 +5,14 @@ using System.Linq;
 [System.Serializable]
 public class PlayerData
 {
-    public Dictionary<string, int> scoreDictionaryUnsorted = new Dictionary<string, int>();
-    public PlayerData(Score score)
+    public PlayerData()
     {
+        
         // Iterate through the scores array
         for (int i = 0; i < scoreDictionaryUnsorted.Count; i++)
         {
-            string pName = score.playerName;
-            int pScore = score.score; // player score? more like pInt, lets get shitfaced.
+            string pName = SaveInSession.playerName;
+            int pScore = SaveInSession.score; // player score? more like pInt, lets get shitfaced.
             
             scoreDictionaryUnsorted.Add(pName, pScore);
             
