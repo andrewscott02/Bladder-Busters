@@ -22,7 +22,7 @@ public class PissMeter : MonoBehaviour
 
     public void IncreasePiss(float pissIncrease)
     {
-        pissScale += pissIncrease;
+        pissScale = Mathf.Clamp(pissScale + pissIncrease, 0, 1);
 
         if (pissScale >= 1)
         {
@@ -38,6 +38,8 @@ public class PissMeter : MonoBehaviour
         {
             pissFX.SetActive(false);
         }
+
+        busterController.RecalculateSpeed(pissScale + 1);
     }
 
     bool alreadyLost = false;
@@ -48,22 +50,36 @@ public class PissMeter : MonoBehaviour
         {
             alreadyLost = true;
             busterController.canMove = false;
+            busterController.pissedYourself = true;
 
             if (pissFXGameOver != null)
             {
                 Instantiate(pissFXGameOver, penisTransform);
+            }
+
+            Score score = busterController.GetComponent<Score>();
+
+            if (score != null)
+            {
+                score.EndGame("Bladder Busted!");
             }
         }
     }
 
     public void TakeThePiss(float pissDecrease)
     {
-        pissScale -= pissDecrease;
+        pissScale = Mathf.Clamp(pissScale - pissDecrease, 0, 1);
+
+        busterController.RecalculateSpeed(pissScale + 1);
     }
 
     private void FixedUpdate()
     {
-        IncreasePiss(pissIncreasePerUpdate);
+        if (busterController.canMove)
+        {
+            IncreasePiss(pissIncreasePerUpdate);
+        }
+
         pissSlider.value = pissScale;
     }
 }

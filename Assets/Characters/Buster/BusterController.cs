@@ -6,21 +6,42 @@ public class BusterController : MonoBehaviour
 {
     public Rigidbody rb;
 
-    public int speeeeed = 1;
+    float speeeeed = 1;
+    public float baseSpeed = 2;
+    public float editorSpeedMultiplier = 0.1f;
     public Vector2 inputDelay;
 
     public bool canMove = true;
+    public bool pissedYourself = false;
     public Camera cam;
+
+    private void Start()
+    {
+        RecalculateSpeed(1);
+    }
+
+    public void RecalculateSpeed(float speedMultiplier)
+    {
+        speeeeed = baseSpeed;
+
+        speeeeed *= speedMultiplier;
+
+#if UNITY_EDITOR
+        speeeeed *= editorSpeedMultiplier;
+#endif
+    }
 
     public void BustAMove(int direction)
     {
         if (canMove)
+        {
             StartCoroutine(IDelayMovement(Random.Range(inputDelay.x, inputDelay.y), direction));
+        }
     }
 
     private void FixedUpdate()
     {
-        if (canMove == false)
+        if (pissedYourself == true)
         {
             rb.velocity += rb.rotation * Vector3.back * 5;
             //rb.velocity += rb.rotation * Vector3.left * 4;
@@ -40,7 +61,7 @@ public class BusterController : MonoBehaviour
 
     IEnumerator IDelayMovement(float delay, int direction)
     {
-        Debug.Log("Move in " + direction + " direction");
+        //Debug.Log("Move in " + direction + " direction");
 
         yield return new WaitForSeconds(delay);
 

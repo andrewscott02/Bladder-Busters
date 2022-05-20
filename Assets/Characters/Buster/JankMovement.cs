@@ -10,11 +10,64 @@ public class JankMovement : MonoBehaviour
     public ControlsUI controlUI;
 
     DrunkMeter drunkMeter;
+    PissMeter pissMeter;
 
     private void Start()
     {
-        drunkMeter = GetComponent<DrunkMeter>();
+        Setup();
+    }
 
+    private void Awake()
+    {
+        Setup();
+    }
+
+    private void Setup()
+    {
+        drunkMeter = GetComponent<DrunkMeter>();
+        pissMeter = GetComponent<PissMeter>();
+
+        StandardControls();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            //Debug.Log("W pressed: move " + DetermineDirection(KeyCode.W));
+            busterController.BustAMove(DetermineDirection(KeyCode.W));
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            //Debug.Log("A pressed: move " + DetermineDirection(KeyCode.A));
+            busterController.BustAMove(DetermineDirection(KeyCode.A));
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            //Debug.Log("S pressed: move " + DetermineDirection(KeyCode.S));
+            busterController.BustAMove(DetermineDirection(KeyCode.S));
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            //Debug.Log("D pressed: move " + DetermineDirection(KeyCode.D));
+            busterController.BustAMove(DetermineDirection(KeyCode.D));
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Debug.Log("randomise");
+            //drunkMeter.Drink(0.3f);
+            //pissMeter.IncreasePiss(0.2f);
+        }
+    }
+
+    int DetermineDirection(KeyCode keyCode)
+    {
+        return inputDirections[keyCode];
+    }
+
+    public void StandardControls()
+    {
         inputDirections = new Dictionary<KeyCode, int>();
 
         inputDirections.Add(KeyCode.W, 0);
@@ -23,41 +76,6 @@ public class JankMovement : MonoBehaviour
         inputDirections.Add(KeyCode.D, 3);
 
         controlUI.ConfigureControls(inputDirections);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            //Debug.Log("W pressed: move " + DetermineDirection(KeyCode.W));
-            busterController.BustAMove(DetermineDirection(KeyCode.W));
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            //Debug.Log("A pressed: move " + DetermineDirection(KeyCode.A));
-            busterController.BustAMove(DetermineDirection(KeyCode.A));
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            //Debug.Log("S pressed: move " + DetermineDirection(KeyCode.S));
-            busterController.BustAMove(DetermineDirection(KeyCode.S));
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            //Debug.Log("D pressed: move " + DetermineDirection(KeyCode.D));
-            busterController.BustAMove(DetermineDirection(KeyCode.D));
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("randomise");
-            drunkMeter.Drink(0.6f, 0.2f); ;
-        }
-    }
-
-    int DetermineDirection(KeyCode keyCode)
-    {
-        return inputDirections[keyCode];
     }
 
     public void RandomiseInputs()
