@@ -14,7 +14,17 @@ public class MoveCar : MonoBehaviour
     private void Start()
     {
         StartCoroutine(CarMovement());
+        RecalculateSpeed();
     }
+
+    public void RecalculateSpeed()
+    {
+        journeyInterval *= 10;
+#if UNITY_EDITOR
+        journeyInterval /= 10;
+#endif
+    }
+
     private void Update() {
         MoveBetween();
         currentTime += journeyInterval;

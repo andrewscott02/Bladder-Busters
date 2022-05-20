@@ -56,8 +56,8 @@ public class JankMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Debug.Log("randomise");
-            drunkMeter.Drink(0.3f);
-            pissMeter.IncreasePiss(0.2f);
+            //drunkMeter.Drink(0.3f);
+            //pissMeter.IncreasePiss(0.2f);
         }
     }
 
