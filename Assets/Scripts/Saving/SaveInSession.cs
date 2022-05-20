@@ -55,5 +55,25 @@ public static class SaveInSession
             playerScoresSorted.Add(bestSavedScore);
             count++;
         }
+
+        RemoveScores();
+    }
+
+    static void RemoveScores()
+    {
+        for (int i = 0; i < playerScoresSorted.Count; i++)
+        {
+            if (i > 9)
+            {
+                playerScoresSorted.RemoveAt(i);
+            }
+        }
+
+        playerScoresUnsorted.Clear();
+
+        foreach (var item in playerScoresSorted)
+        {
+            playerScoresUnsorted.Add(item);
+        }
     }
 }
