@@ -152,9 +152,11 @@ GameObject:
   - component: {fileID: 6900572604080662971}
   - component: {fileID: 1729300584559972920}
   - component: {fileID: 6091138924623000320}
+  - component: {fileID: 7533018733913907768}
+  - component: {fileID: 3609046043052872235}
   m_Layer: 0
   m_Name: Child car but totally working uwu
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,3 +206,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.006408, y: 2.8798594, z: 3.6515665}
   m_Center: {x: 0.05642712, y: 2.4849296, z: 0.0269652}
+--- !u!65 &7533018733913907768
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6091138924623000321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.54, y: 2.44, z: 4.67}
+  m_Center: {x: 0.05642712, y: 2.27, z: 0.0269652}
+--- !u!114 &3609046043052872235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6091138924623000321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc9e9481e1feb6418c7d6ab782198f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
