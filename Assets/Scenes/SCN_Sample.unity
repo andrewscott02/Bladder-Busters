@@ -15660,8 +15660,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.59, y: 5.315753, z: 5.9919944}
-  m_Center: {x: -8.455683e-15, y: 3.7028766, z: 0.1559968}
+  m_Size: {x: 2.006408, y: 2.8798594, z: 3.07}
+  m_Center: {x: 0.05642712, y: 2.4849296, z: 0.0269652}
 --- !u!1 &568639777000805585
 GameObject:
   m_ObjectHideFlags: 0
@@ -15673,6 +15673,8 @@ GameObject:
   - component: {fileID: 914202625941573227}
   - component: {fileID: 4941453680469456360}
   - component: {fileID: 568639777000805584}
+  - component: {fileID: 568639777000805587}
+  - component: {fileID: 568639777000805586}
   m_Layer: 0
   m_Name: Child car but totally working uwu (1)
   m_TagString: Untagged
@@ -15680,6 +15682,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &568639777000805586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568639777000805585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc9e9481e1feb6418c7d6ab782198f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &568639777000805587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568639777000805585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.54, y: 2.44, z: 5.75}
+  m_Center: {x: 0.05642712, y: 2.27, z: 0.0269652}
 --- !u!4 &914202625941573227
 Transform:
   m_ObjectHideFlags: 0
@@ -16072,6 +16099,8 @@ GameObject:
   - component: {fileID: 5211418067273846018}
   - component: {fileID: 31202620156589697}
   - component: {fileID: 4835033880184051641}
+  - component: {fileID: 4835033880184051643}
+  - component: {fileID: 4835033880184051642}
   m_Layer: 0
   m_Name: Child car but totally working uwu
   m_TagString: Untagged
@@ -16090,8 +16119,33 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.59, y: 5.315753, z: 5.9919944}
-  m_Center: {x: -8.455683e-15, y: 3.7028766, z: 0.1559968}
+  m_Size: {x: 2.006408, y: 2.8798594, z: 3.07}
+  m_Center: {x: 0.05642712, y: 2.4849296, z: 0.0269652}
+--- !u!114 &4835033880184051642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835033880184051640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc9e9481e1feb6418c7d6ab782198f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4835033880184051643
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835033880184051640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.54, y: 2.44, z: 5.75}
+  m_Center: {x: 0.05642712, y: 2.27, z: 0.0269652}
 --- !u!1 &4907477008500929058
 GameObject:
   m_ObjectHideFlags: 0
@@ -16271,8 +16325,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.59, y: 5.315753, z: 5.9919944}
-  m_Center: {x: -8.455683e-15, y: 3.7028766, z: 0.1559968}
+  m_Size: {x: 2.006408, y: 2.8798594, z: 3.07}
+  m_Center: {x: 0.05642712, y: 2.4849296, z: 0.0269652}
 --- !u!1 &7643809817637282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -16284,6 +16338,8 @@ GameObject:
   - component: {fileID: 7016489658286192803}
   - component: {fileID: 2982477704073184032}
   - component: {fileID: 7643809817637282328}
+  - component: {fileID: 7643809817637282331}
+  - component: {fileID: 7643809817637282330}
   m_Layer: 0
   m_Name: Child car but totally working uwu (2)
   m_TagString: Untagged
@@ -16291,6 +16347,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7643809817637282330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643809817637282329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc9e9481e1feb6418c7d6ab782198f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7643809817637282331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643809817637282329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.54, y: 2.44, z: 5.75}
+  m_Center: {x: 0.05642712, y: 2.27, z: 0.0269652}
 --- !u!4 &8426620769191641401
 Transform:
   m_ObjectHideFlags: 0
